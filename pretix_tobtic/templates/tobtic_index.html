@@ -1,0 +1,48 @@
+{% extends "pretixpresale/base.html" %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% load static %}
+{% block page %}
+
+<div class="row justify-content-center  tt-top">
+<!--
+    <div class="main-search">
+        <div class="form-group has-feedback has-search">
+            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            <input type="text" class="search-form-control" placeholder="Search">
+        </div>
+
+    </div>
+-->
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="section-title">
+            <h2>Populära evenemang</h2>
+        </div>
+    </div>
+    <div class="col-md-12 col-sm-12">
+            {% include "events_list.html" %}    
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="section-title">
+            <h2>Arrangörer</h2>
+        </div>
+    </div>
+    <div class="col-md-12 col-sm-12">
+            {% include "arrangers_list.html" %}
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block tobticjs %}
+<script type="text/javascript" src="{% static "tobtic/js/owl.carousel.min.js" %}"></script>
+<script type="text/javascript" src="{% static "tobtic/js/app.js" %}"></script>
+<script type="text/javascript" src="{% static "tobtic/js/svg4everybody.min.js" %}"></script>
+{% endblock %}

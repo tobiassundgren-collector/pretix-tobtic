@@ -1,0 +1,34 @@
+{% load static %}
+{% load thumb %}
+{% load rich_text %}
+{% load i18n %}
+{% load l10n %}
+{% load eventurl %}
+{% load money %}
+
+<div class="owl-carousel owl-theme owl-loaded owl-drag">
+    {% for org in orgs %}
+
+    {% for evt in org.loadedEvents %}
+    <a href="/{{ org.slug }}/{{ evt.slug }}" class="item event-item">
+        <div class="event-wrapper">
+            <div class="card-image">
+                <img src="{{ evt.loadedLogo|thumb:'500x200' }}" alt="{{ event.name }}" class="img-responsive" />
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ evt.name }}</h5>
+                <div class="card-text">{{ evt.loadedText|rich_text }}</div>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">
+                        {{ evt.get_date_range_display }}
+
+                    ,  {{ evt.location|linebreaksbr }}</small>
+            </div>
+        </div>
+    </a>
+
+    {% endfor %}
+
+    {% endfor %}
+</div>

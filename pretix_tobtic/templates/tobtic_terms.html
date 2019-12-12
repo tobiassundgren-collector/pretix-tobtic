@@ -1,0 +1,20 @@
+{% extends "pretixpresale/base.html" %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% load static %}
+{% block page %}
+<div class="row justify-content-center tt-top">
+   <h3>Köp- och leveransvillkor</h3>   
+   <p>Allmänt
+         TobTic tillhandahåller ett försäljningssystem av biljetter där arrangörer kan sälja biljetter och varor till sina kunder. TobTic står således endast för det tekniska förmedlandet av biljetter genom försäljningssystemet. Arrangören ansvarar till fullo för sitt eget evenemang och TobTic ansvarar därmed inte för någon del i evenemanget. TobTic är således inte ansvarigt för evenemangets innehåll eller genomförande och är inte heller ersättningsskyldig för någon förlust för dig eller någon annan kund som härrör till evenemanget och arrangörens ansvar.
+         
+         Frågor av denna typ hänvisar vi till arrangören för respektive evenemang.</p> 
+</div>
+
+{% endblock %}
+
+{% block tobticjs %}
+<script type="text/javascript" src="{% static "tobtic/js/owl.carousel.min.js" %}"></script>
+<script type="text/javascript" src="{% static "tobtic/js/app.js" %}"></script>
+<script type="text/javascript" src="{% static "tobtic/js/svg4everybody.min.js" %}"></script>
+{% endblock %}

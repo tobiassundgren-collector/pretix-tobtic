@@ -1,0 +1,3 @@
+recursive-include pretix_tobtic/static *
+recursive-include pretix_tobtic/templates *
+recursive-include pretix_tobtic/locale *

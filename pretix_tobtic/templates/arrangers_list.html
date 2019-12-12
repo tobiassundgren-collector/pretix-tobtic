@@ -1,0 +1,14 @@
+{% load static %}
+{% load thumb %}
+
+<div class="owl-carousel owl-theme owl-loaded owl-drag">
+    {% for org in orgs %}
+    <a href="/{{org.slug}}/" class="item event-item">
+        <div class="arranger-wrapper">
+            <img src="{{ org.loadedLogo|thumb:'1000x100' }}" class="img-responsive cover" alt="{{ org.name }}">
+            <div class="arranger-text">{{ org.name }}</div>
+        </div>
+    </a>
+
+    {% endfor %}
+</div>

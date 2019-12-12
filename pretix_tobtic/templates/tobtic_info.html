@@ -1,0 +1,17 @@
+{% extends "pretixpresale/base.html" %}
+{% load bootstrap3 %}
+{% load i18n %}
+{% load static %}
+{% block page %}
+
+<div class="row justify-content-center  tt-top">
+        <h3>Om TobTic</h3>    
+     </div>
+
+{% endblock %}
+
+{% block tobticjs %}
+<script type="text/javascript" src="{% static "tobtic/js/owl.carousel.min.js" %}"></script>
+<script type="text/javascript" src="{% static "tobtic/js/app.js" %}"></script>
+<script type="text/javascript" src="{% static "tobtic/js/svg4everybody.min.js" %}"></script>
+{% endblock %}
