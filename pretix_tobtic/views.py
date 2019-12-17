@@ -15,7 +15,8 @@ class ShowPageView(TemplateView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data()
         orgs = Organizer.objects.all()
-    
+        orgs_with_events = []
+
         for org in orgs:
             with scope(organizer=Organizer.objects.get(slug = org.slug)):
                 today = date.today()
@@ -34,5 +35,7 @@ class ShowPageView(TemplateView):
                 org.loadedLogo = "../static/tobtic/img/no-arranger-image.png"
             else:
                 org.loadedLogo = org.settings.get('organizer_logo_image', as_type=str, default='')[7:]
-        ctx['orgs'] = orgs
+            if(len(evts)  > 0):
+                orgs_with_events.append(org)
+        ctx['orgs'] = orgs_with_events
         return ctx
