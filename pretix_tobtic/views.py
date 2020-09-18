@@ -21,7 +21,7 @@ class ShowPageView(TemplateView):
             with scope(organizer=Organizer.objects.get(slug = org.slug)):
                 today = date.today()
                 orgevts = org.events.filter(
-                    active=True,
+                    live=True,
                     is_public=True,
                     date_from__gte=today)
                 evts = []
