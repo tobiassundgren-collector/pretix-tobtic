@@ -20,7 +20,10 @@ class ShowPageView(TemplateView):
         for org in orgs:
             with scope(organizer=Organizer.objects.get(slug = org.slug)):
                 today = date.today()
-                orgevts = org.events.filter(date_from__gte=today)
+                orgevts = org.events.filter(
+                    active=True,
+                    is_public=True,
+                    date_from__gte=today)
                 evts = []
                 for evt in orgevts:
                     evt.loadedText = evt.settings.get('frontpage_text')
